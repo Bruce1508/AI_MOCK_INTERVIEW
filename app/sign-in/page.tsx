@@ -2,7 +2,7 @@ import AuthForm from '@/components/AuthForm'
 
 const page = () => {
     return (
-        <AuthForm type='sign-up'/>
+        <AuthForm type='sign-in'/>
     )
 }
 
