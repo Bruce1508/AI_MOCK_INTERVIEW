@@ -74,7 +74,11 @@ export async function signIn(params: SignInParams) {
                 success: false,
                 messaeg: 'User does not exist. Create an account'
             }
-            await setSessionCookies(idToken)
+        }
+        await setSessionCookies(idToken);
+        return {
+            success: true,
+            message: "Signed in successfully."
         }
 
     } catch (error) {
@@ -99,7 +103,7 @@ export async function getCurrentUser(): Promise<User | null> {
 
         //truy vấn thông itn từ FireStore
         const userRecord = await db //db = getFireStore()
-            .collection('users')
+            .collection('user')
             .doc(decodedClaims.uid)
             //trả về một DocumentSnapShot, trong đó có phương thức data()
             .get();

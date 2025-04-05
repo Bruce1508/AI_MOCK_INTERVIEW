@@ -7,12 +7,9 @@ const AuthLayout = async ({children}: {children: ReactNode}) => {
 
     try {
         const isUserAuthenticated = await isAuthenticated();
-        if (!isUserAuthenticated) {
-            redirect('/');
-        }
+        if (isUserAuthenticated) redirect("/")
     } catch (error) {
-        console.error('Authentication check failed: ', error);
-        redirect('/');
+        console.error("Error: ", error)
     }
 
     return (
