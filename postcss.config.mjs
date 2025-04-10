@@ -1,5 +1,7 @@
-const config = {
-  plugins: ["@tailwindcss/postcss"],
+// Use string format as recommended in the error message
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+    'autoprefixer': {},
+  },
 };
-
-export default config;
